@@ -9,19 +9,19 @@
 // @grant        none
 // ==/UserScript==
 
-(function() {
-    'use strict';
+(function () {
+    "use strict";
 
     //  Store the current page URL
     let currentUrl = location.href;
 
     //  Function to controll speed
-    function controlSpeed () {
+    function controlSpeed() {
         let duration = 0;
         let currentTime = 0;
-        
+
         //  Get the video
-        let vdo = document.getElementsByTagName('video')[0];
+        let vdo = document.getElementsByTagName("video")[0];
 
         //  Set the video speed
         vdo.playbackRate = 10;
@@ -44,8 +44,8 @@
     };
 
     //  Call the control function on page load and focus
-    window.addEventListener('load', controlSpeed);
-    window.addEventListener('focus', controlSpeed);
+    window.addEventListener("load", controlSpeed);
+    window.addEventListener("focus", controlSpeed);
 
     //  Check page transition every 10 seconds
     setInterval(checkPageTransition, 10000);

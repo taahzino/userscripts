@@ -16,11 +16,17 @@
     const rows = table.querySelectorAll("tr");
 
     rows.forEach((row) => {
-        row.addEventListener("click", () => {
-            const id = row.getAttribute("id").toString();
-            if (id && id.length > 0) {
-                window.open(`https://chorcha.net/exam/${id}`, "_blank");
-            }
-        });
+        let id = row.getAttribute("id");
+        if (id && id.length > 0) {
+            row.innerHTML += `
+            <td class="td">
+                <div class="flex">
+                    <a href="https://chorcha.net/exam/${id}" target="_blank"><div class="tag blue  max-w-[150px] overflow-hidden flex-wrap">
+                        Review
+                    </div></a>
+                </div>
+            </td>
+        `;
+        }
     });
 })();
